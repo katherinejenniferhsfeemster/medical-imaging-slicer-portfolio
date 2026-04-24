@@ -2,6 +2,8 @@
 
 # Medical Imaging & 3D Slicer Portfolio
 
+**by Katherine Feemster**
+
 ### Senior Medical Imaging Specialist · 3D Slicer Python Extensions · AI Dataset Curation
 
 [🌐 **Live portfolio site**](https://katherinejenniferhsfeemster.github.io/medical-imaging-slicer-portfolio/) · [GitHub repo](https://github.com/katherinejenniferhsfeemster/medical-imaging-slicer-portfolio)
@@ -96,6 +98,8 @@ Open to remote and contract engagements. This repository is the living portfolio
 ---
 
 ## Contact
+
+**Katherine Feemster**
 
 - GitHub — [@katherinejenniferhsfeemster](https://github.com/katherinejenniferhsfeemster)
 - Live site — [katherinejenniferhsfeemster.github.io/medical-imaging-slicer-portfolio](https://katherinejenniferhsfeemster.github.io/medical-imaging-slicer-portfolio/)
