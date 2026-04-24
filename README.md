@@ -77,19 +77,19 @@ DICOM-SEG.
 
 ## Selected engagements
 
-> [Company, years] — Led segmentation and dataset-curation work on a multi-site
-> oncology imaging study. Built the DICOM de-identification pipeline, the
-> nnU-Net training harness, and the 3D Slicer review tooling used by radiologists
-> to approve AI segmentations before they entered the ground-truth set.
+> Led segmentation and dataset-curation work on a multi-site oncology imaging
+> study. Built the DICOM de-identification pipeline, the nnU-Net training
+> harness, and the 3D Slicer review tooling used by radiologists to approve AI
+> segmentations before they entered the ground-truth set.
 
-> [Company, years] — Medical-imaging specialist for a computer-assisted
-> intervention product. Maintained the CT ↔ MRI registration stack (SimpleITK
-> + BRAINS in Slicer), shipped a Python Slicer extension for intra-op review,
-> and wrote the validation plan for an FDA 510(k) submission package.
+> Medical-imaging specialist for a computer-assisted intervention product.
+> Maintained the CT ↔ MRI registration stack (SimpleITK + BRAINS in Slicer),
+> shipped a Python Slicer extension for intra-op review, and wrote the
+> validation plan for an FDA 510(k) submission package.
 
-> [Company, years] — 3D Slicer contributor. Wrote scripted modules, contributed
-> fixes to the SegmentEditor and DICOM import paths, and mentored two junior
-> engineers onto the codebase.
+> 3D Slicer contributor. Wrote scripted modules, contributed fixes to the
+> SegmentEditor and DICOM import paths, and mentored two junior engineers onto
+> the codebase.
 
 ---
 
