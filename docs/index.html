@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Katherine Feemster — Medical Imaging &amp; 3D Slicer Specialist</title>
+  <meta name="description" content="Senior medical imaging portfolio — 3D Slicer Python extensions, DICOM de-identification, SimpleITK segmentation and registration, nnU-Net training playbooks." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="brand">
+      <span class="brand-mark" aria-hidden="true">◐</span>
+      <span>Katherine Feemster</span>
+    </a>
+    <nav>
+      <a href="#work">Work</a>
+      <a href="#code">Code</a>
+      <a href="#stack">Stack</a>
+      <a href="#about">About</a>
+      <a class="btn btn-outline" href="https://github.com/katherinejenniferhsfeemster/medical-imaging-slicer-portfolio" target="_blank" rel="noopener">GitHub ↗</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow">Medical imaging · 3D Slicer · DICOM · AI dataset curation</p>
+        <h1>I build the <span class="accent">clean, reproducible imaging pipelines</span> that radiologists and AI models agree on.</h1>
+        <p class="lede">
+          A decade across <b>3D Slicer, SimpleITK, MONAI, nnU-Net</b>, and DICOM tooling. Most of my pipelines are scripts, because segmentations you can diff are segmentations you can defend.
+        </p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#work">See the work</a>
+          <a class="btn btn-ghost" href="https://github.com/katherinejenniferhsfeemster/medical-imaging-slicer-portfolio" target="_blank" rel="noopener">Browse the repo</a>
+        </div>
+      </div>
+      <figure class="hero-art">
+        <img src="assets/slice_mosaic.png" alt="Axial, coronal, and sagittal views of a synthetic CT phantom with overlay" />
+        <figcaption>Synthetic thoracoabdominal phantom — rendered live from <code>render_figures.py</code></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="strip">
+    <div class="wrap strip-inner">
+      <span>3D Slicer</span>
+      <span>SimpleITK / ITK</span>
+      <span>MONAI</span>
+      <span>nnU-Net v2</span>
+      <span>TotalSegmentator</span>
+      <span>DICOM &amp; DICOM-SEG</span>
+      <span>NIfTI / BIDS</span>
+      <span>PS3.15 de-ID</span>
+      <span>PyTorch</span>
+      <span>VTK</span>
+      <span>pydicom</span>
+      <span>OHIF</span>
+    </div>
+  </section>
+
+  <section id="work" class="section">
+    <div class="wrap">
+      <h2>Selected projects</h2>
+      <p class="section-lede">Five projects that together cover the full medical-imaging-for-AI pipeline — from raw DICOM through de-identified, QC'd, radiologist-approved training data.</p>
+
+      <div class="cards">
+
+        <article class="card feature">
+          <div class="card-media">
+            <img src="assets/segmentation_overlay.png" alt="Liver segmentation review: ground truth outline vs. SimpleITK prediction" />
+          </div>
+          <div class="card-body">
+            <p class="tag">Segmentation · SimpleITK · Slicer SegmentEditor</p>
+            <h3>Multi-organ CT segmentation pipeline</h3>
+            <p>A classical SimpleITK pipeline for body, lungs, bone, and liver — the baseline I run on every new study before handing volumes to nnU-Net or TotalSegmentator. Deterministic, fast, and good enough as a sanity check on AI output.</p>
+            <p class="meta">Dice on synthetic phantom: body <b>0.97</b> · lungs <b>0.81</b> · bone <b>1.00</b> · liver <b>0.97</b> · HD95 &lt; 32 mm across the board</p>
+            <a class="link" href="https://github.com/katherinejenniferhsfeemster/medical-imaging-slicer-portfolio/tree/main/projects/multi-organ-ct-segmentation" target="_blank" rel="noopener">Read the case study →</a>
+          </div>
+        </article>
+
+        <article class="card feature reverse">
+          <div class="card-media">
+            <img src="assets/dice_curve.png" alt="nnU-Net training curves for multi-organ segmentation" />
+          </div>
+          <div class="card-body">
+            <p class="tag">nnU-Net · PyTorch · MONAI-compatible</p>
+            <h3>Brain MRI lesion segmentation — nnU-Net playbook</h3>
+            <p>How I train and evaluate a 3D nnU-Net v2 model for MS / glioma lesion segmentation, with 3D Slicer used as the review and correction tool at every step. Includes the metrics that actually matter clinically — lesion-level recall at 3 mm, FP per volume, HD95.</p>
+            <p class="meta">Illustrative validation Dice: liver 0.95 · spleen 0.92 · kidneys 0.92 · pancreas 0.80 · lesion 0.73</p>
+            <a class="link" href="https://github.com/katherinejenniferhsfeemster/medical-imaging-slicer-portfolio/tree/main/projects/brain-mri-lesion-segmentation" target="_blank" rel="noopener">Read the case study →</a>
+          </div>
+        </article>
+
+        <div class="grid-3">
+          <article class="card">
+            <div class="card-body">
+              <p class="tag">Registration · SimpleITK · BRAINS</p>
+              <h3>CT ↔ MRI registration toolkit</h3>
+              <p>Rigid initialisation plus B-spline deformable refinement against Mattes MI. On the synthetic phantom the pipeline drops mean absolute error from 82 HU to 16 HU — an 80 % reduction.</p>
+              <a class="link" href="https://github.com/katherinejenniferhsfeemster/medical-imaging-slicer-portfolio/tree/main/projects/ct-mri-registration" target="_blank" rel="noopener">Case study →</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-body">
+              <p class="tag">DICOM · PS3.15 · BIDS</p>
+              <h3>AI dataset curation</h3>
+              <p>De-identification to the DICOM PS3.15 Basic profile with deterministic SHA-256 pseudonyms, BIDS conversion, and a QC dashboard that flags motion, coverage, and HU-range outliers before they reach the training set.</p>
+              <a class="link" href="https://github.com/katherinejenniferhsfeemster/medical-imaging-slicer-portfolio/tree/main/projects/ai-dataset-curation" target="_blank" rel="noopener">Case study →</a>
+            </div>
+          </article>
+
+          <article class="card accent-card">
+            <div class="card-body">
+              <p class="tag">3D Slicer · Python scripted module</p>
+              <h3>Slicer Python extension</h3>
+              <p>A <code>ScriptedLoadableModule</code> that wraps the SimpleITK pipeline inside Slicer so a radiologist can run it, compute Dice vs. a reference segmentation, and export DICOM-SEG in three clicks.</p>
+              <a class="link" href="https://github.com/katherinejenniferhsfeemster/medical-imaging-slicer-portfolio/tree/main/projects/slicer-python-extension" target="_blank" rel="noopener">Case study →</a>
+            </div>
+          </article>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="code" class="section dark">
+    <div class="wrap">
+      <h2>Code you can actually run</h2>
+      <p class="section-lede">Every figure on this page is regenerated by GitHub Actions on every push — never pre-baked. No patient data is required. Clone the repo, run a script, get the same Dice number.</p>
+
+      <div class="code-grid">
+        <div class="code-card">
+          <h4>Multi-organ segmentation — SimpleITK</h4>
+          <pre><code>python scripts/python/segmentation_pipeline.py</code></pre>
+          <p>Runs the full body / lungs / bone / liver pipeline on the synthetic phantom and prints Dice + HD95 per structure.</p>
+        </div>
+        <div class="code-card">
+          <h4>CT ↔ MRI registration</h4>
+          <pre><code>python scripts/python/registration.py</code></pre>
+          <p>Centre-of-mass init → rigid multi-res → B-spline deformable. Reports mean-abs-error reduction at each stage.</p>
+        </div>
+        <div class="code-card">
+          <h4>DICOM de-identification — PS3.15</h4>
+          <pre><code>python scripts/python/deidentify_dicom.py</code></pre>
+          <p>Runs the Basic Application Confidentiality profile on a synthetic in-memory DICOM and verifies pseudonymisation and UID regeneration.</p>
+        </div>
+        <div class="code-card">
+          <h4>Regenerate portfolio figures</h4>
+          <pre><code>python scripts/python/render_figures.py</code></pre>
+          <p>Rebuilds the slice mosaic, segmentation overlay, MIP triptych, and Dice-curve plots that ship in <code>/docs/assets</code>.</p>
+        </div>
+      </div>
+
+      <div style="margin-top: 36px;">
+        <figure class="hero-art" style="background: #0F1A1F; padding: 22px;">
+          <img src="assets/volume_render.png" alt="Maximum-intensity projections of the synthetic thoracoabdominal phantom" />
+          <figcaption style="color: #B8BFC4;">Maximum-intensity projections — coronal, sagittal, axial — of the synthetic thoracoabdominal phantom.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="stack" class="section">
+    <div class="wrap">
+      <h2>Stack</h2>
+      <div class="stack-grid">
+        <div><h4>3D Slicer</h4><p>Scripted modules (<code>ScriptedLoadableModule</code>), SegmentEditor, Markups, DICOM browser. Custom extensions shipped to radiologist workstations.</p></div>
+        <div><h4>Segmentation</h4><p>nnU-Net v2, MONAI, TotalSegmentator, SimpleITK classical pipelines. Dice + HD95 + lesion-level recall reporting, cross-validated on held-out folds.</p></div>
+        <div><h4>Registration</h4><p>SimpleITK and BRAINS in Slicer. Rigid, affine, B-spline deformable. Mattes MI for multi-modal, NCC for intra-modality.</p></div>
+        <div><h4>DICOM &amp; interop</h4><p>pydicom, dcmqi, dcm2niix. DICOM-SEG, RT-STRUCT, NIfTI, NRRD, BIDS. PS3.15 de-identification, burned-in-text detection.</p></div>
+        <div><h4>Dataset curation</h4><p>QC dashboards, motion scoring, HU-range validation. Deterministic pseudonymisation. HIPAA-aware workflows for multi-site studies.</p></div>
+        <div><h4>Code &amp; CI</h4><p>Python (SimpleITK, numpy, scipy, matplotlib), PyTorch, Docker. Git, GitHub Actions. Every analysis is a script — diffable, reviewable, reproducible.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section about">
+    <div class="wrap about-inner">
+      <div>
+        <h2>About</h2>
+        <p>I'm a senior medical-imaging specialist with ten years across DICOM tooling, 3D Slicer extensions, segmentation, and dataset curation for AI research. I care about reproducible pipelines, honest metrics (Dice is necessary but not sufficient), de-identification done right, and scripts that still produce the same number a year from now.</p>
+        <p>Open to remote and contract engagements in medical imaging, computer-assisted intervention, or radiology AI. The repository linked below is the living portfolio companion to my CV.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="https://github.com/katherinejenniferhsfeemster/medical-imaging-slicer-portfolio" target="_blank" rel="noopener">Portfolio on GitHub</a>
+          <a class="btn btn-ghost" href="https://github.com/katherinejenniferhsfeemster" target="_blank" rel="noopener">@katherinejenniferhsfeemster</a>
+        </div>
+      </div>
+      <aside class="side-card">
+        <h4>At a glance</h4>
+        <ul>
+          <li>10 years across 3D Slicer, SimpleITK, and DICOM</li>
+          <li>PS3.15 de-ID, BIDS, DICOM-SEG daily</li>
+          <li>Every figure on this site is regenerated in CI</li>
+          <li>No patient data in this repo — synthetic phantom only</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-inner">
+    <span>© 2026 Katherine Feemster. Built with 3D Slicer, SimpleITK, and a lot of Python.</span>
+    <a href="https://github.com/katherinejenniferhsfeemster/medical-imaging-slicer-portfolio" target="_blank" rel="noopener">Source ↗</a>
+  </div>
+</footer>
+
+</body>
+</html>

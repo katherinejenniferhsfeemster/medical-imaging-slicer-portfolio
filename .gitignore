@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+.DS_Store
+*.nii
+*.nii.gz
+*.dcm
+*.dicom
+dataset/
+nnUNet_preprocessed/
+nnUNet_raw/
+nnUNet_results/

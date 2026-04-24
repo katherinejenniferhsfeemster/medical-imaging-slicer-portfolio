@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+      - name: Run pipeline tests
+        run: |
+          python scripts/python/segmentation_pipeline.py
+          python scripts/python/registration.py
+          python scripts/python/deidentify_dicom.py
+      - name: Regenerate figures
+        run: |
+          python scripts/python/render_figures.py
+      - name: Verify figures exist
+        run: |
+          test -f assets/renders/slice_mosaic.png
+          test -f assets/renders/segmentation_overlay.png
+          test -f assets/renders/volume_render.png
+          test -f assets/renders/dice_curve.png
